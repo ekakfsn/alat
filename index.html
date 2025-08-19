@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профессиональный ремонт грузовых автомобилей</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Шапка -->
+    <header class="bg-gray-900 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-truck-monster text-2xl text-yellow-400"></i>
+                <h1 class="text-2xl font-bold">ГрузоСервис</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#services" class="hover:text-yellow-400 transition">Услуги</a>
+                <a href="#about" class="hover:text-yellow-400 transition">О нас</a>
+                <a href="#reviews" class="hover:text-yellow-400 transition">Отзывы</a>
+                <a href="#contacts" class="hover:text-yellow-400 transition">Контакты</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Мобильное меню -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 px-4 py-2">
+            <a href="#services" class="block py-2 hover:text-yellow-400 transition">Услуги</a>
+            <a href="#about" class="block py-2 hover:text-yellow-400 transition">О нас</a>
+            <a href="#reviews" class="block py-2 hover:text-yellow-400 transition">Отзывы</a>
+            <a href="#contacts" class="block py-2 hover:text-yellow-400 transition">Контакты</a>
+        </div>
+    </header>
+
+    <!-- Герой -->
+    <section class="hero text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Ремонт грузовых автомобилей</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Качественный ремонт и обслуживание грузовиков любых марок с гарантией</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="tel:+79991234567" class="bg-transparent hover:bg-gray-800 border-2 border-white text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    <i class="fas fa-phone mr-2"></i>+7 (999) 123-45-67
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Наши услуги</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Карточка услуги 1 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-engine text-6xl text-gray-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Ремонт двигателей</h3>
+                        <p class="text-gray-600 mb-4">Капитальный и текущий ремонт двигателей всех типов с использованием оригинальных запчастей.</p>
+                        <a href="#contacts" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">Подробнее →</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 2 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-cogs text-6xl text-gray-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Ремонт трансмиссии</h3>
+                        <p class="text-gray-600 mb-4">Диагностика и ремонт коробок передач, раздаточных коробок, карданов и мостов.</p>
+                        <a href="#contacts" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">Подробнее →</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 3 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-bolt text-6xl text-gray-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Электрооборудование</h3>
+                        <p class="text-gray-600 mb-4">Ремонт и диагностика электронных систем управления, генераторов, стартеров.</p>
+                        <a href="#contacts" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">Подробнее →</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 4 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-tools text-6xl text-gray-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">ТО и диагностика</h3>
+                        <p class="text-gray-600 mb-4">Комплексное техническое обслуживание и компьютерная диагностика грузовиков.</p>
+                        <a href="#contacts" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">Подробнее →</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 5 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-tire text-6xl text-gray-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Шиномонтаж</h3>
+                        <p class="text-gray-600 mb-4">Профессиональный шиномонтаж для грузовых автомобилей любого класса.</p>
+                        <a href="#contacts" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">Подробнее →</a>
+                    </div>
+                </div>
+                
+                <!-- Карточка услуги 6 -->
+                <div class="service-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 bg-gray-300 flex items-center justify-center">
+                        <i class="fas fa-car-crash text-6xl text-gray-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Кузовной ремонт</h3>
+                        <p class="text-gray-600 mb-4">Ремонт и покраска кабин, прицепов, восстановление геометрии кузова.</p>
+                        <a href="#contacts" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">Подробнее →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl font-bold mb-6">О нашей компании</h2>
+                    <p class="text-gray-700 mb-4">Мы - команда профессионалов с более чем 15-летним опытом работы в сфере ремонта и обслуживания грузовых автомобилей.</p>
+                    <p class="text-gray-700 mb-4">Наш сервисный центр оснащен современным диагностическим оборудованием и инструментами, что позволяет нам выполнять ремонт любой сложности.</p>
+                    <p class="text-gray-700 mb-6">Мы работаем с грузовиками всех марок: MAN, Volvo, Scania, Mercedes, DAF, Iveco, КамАЗ, МАЗ и другие.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2 text-xl"></i>
+                            <span>Гарантия качества</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2 text-xl"></i>
+                            <span>Оригинальные запчасти</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2 text-xl"></i>
+                            <span>Современное оборудование</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-300 h-96 rounded-lg overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gray-700 opacity-30"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-warehouse text-6xl text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="reviews" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Отзывы клиентов</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Отзыв 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-gray-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Иван Петров</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Отличный сервис! Быстро и качественно отремонтировали двигатель на моем Volvo. Цены адекватные, персонал вежливый. Рекомендую!"</p>
+                </div>
+                
+                <!-- Отзыв 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-gray-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Сергей Иванов</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Регулярно обслуживаю здесь свой автопарк. Всегда находят подход, даже к сложным проблемам. Особенно радует наличие оригинальных запчастей."</p>
+                </div>
+                
+                <!-- Отзыв 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-gray-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Алексей Смирнов</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"После ДТП восстановили кабину моего КамАЗа как новую. Работали быстро, так как понимали, что машина нужна для работы. Большое спасибо!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты и карта -->
+    <section id="contacts" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Контакты</h2>
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold mb-6">Как нас найти</h3>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-start mb-4">
+                                <i class="fas fa-map-marker-alt text-yellow-500 mt-1 mr-3 text-xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Адрес</h4>
+                                    <p class="text-gray-700">Республика Башкортостан, 1499км трассы М5 Самара-Уфа-Челябинск</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start mb-4">
+                                <i class="fas fa-phone-alt text-yellow-500 mt-1 mr-3 text-xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Телефоны</h4>
+                                    <p class="text-gray-700">+7 (999) 123-45-67</p>
+                                    <p class="text-gray-700">+7 (495) 765-43-21</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start mb-4">
+                                <i class="fas fa-envelope text-yellow-500 mt-1 mr-3 text-xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Email</h4>
+                                    <p class="text-gray-700">info@gruzoservice.ru</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-clock text-yellow-500 mt-1 mr-3 text-xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-lg">Режим работы</h4>
+                                    <p class="text-gray-700">Пн-Пт: 8:00 - 20:00</p>
+                                    <p class="text-gray-700">Сб: 9:00 - 18:00</p>
+                                    <p class="text-gray-700">Вс: выходной</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-4 rounded-lg shadow-md h-full">
+                        <h3 class="text-2xl font-bold mb-4">Мы на карте</h3>
+                        <div id="map" class="rounded-lg overflow-hidden">
+                            <!-- Яндекс карта будет загружена здесь -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-truck-monster text-2xl text-yellow-400"></i>
+                        <h2 class="text-2xl font-bold">ГрузоСервис</h2>
+                    </div>
+                    <p class="text-gray-400 mt-2">Профессиональный ремонт грузовых автомобилей</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+                        <i class="fab fa-vk text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+                        <i class="fab fa-telegram text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-yellow-400 transition">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 ГрузоСервис. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script>
+        // Мобильное меню
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Инициализация Яндекс.Карты
+        function initYandexMap() {
+            // Создание карты
+            ymaps.ready(function() {
+                var myMap = new ymaps.Map('map', {
+                    center: [54.760893, 56.393911], // Координаты из вашей ссылки
+                    zoom: 17,
+                    controls: ['zoomControl', 'fullscreenControl']
+                }, {
+                    searchControlProvider: 'yandex#search'
+                });
+
+                // Создание метки
+                var myPlacemark = new ymaps.Placemark([54.760893, 56.393911], {
+                    hintContent: 'ГрузоСервис',
+                    balloonContent: 'Ремонт грузовых автомобилей<br>Республика Башкортостан, 1499км трассы М5'
+                }, {
+                    // Опции метки
+                    iconLayout: 'default#image',
+                    iconImageHref: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+                    iconImageSize: [32, 32],
+                    iconImageOffset: [-16, -32]
+                });
+
+                // Добавление метки на карту
+                myMap.geoObjects.add(myPlacemark);
+
+                // Добавление элементов управления
+                myMap.controls.add('zoomControl');
+                myMap.controls.add('fullscreenControl');
+            });
+        }
+
+        // Загрузка API Яндекс.Карт
+        var script = document.createElement('script');
+        script.src = 'https://api-maps.yandex.ru/2.1/?apikey=ваш_api_ключ&lang=ru_RU';
+        script.onload = function() {
+            initYandexMap();
+        };
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>
